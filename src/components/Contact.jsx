@@ -1,56 +1,84 @@
 import React from "react";
-import { useState } from "react";
-import { ClipLoader } from "react-spinners";
-
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
   return (
-    <section className="contact">
-      <form>
-        <h1>CONTACT US</h1>
-        <div>
-          <label>Name</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+    <>
+      <section className="contact-section">
+        <div className="contact-intro">
+          <h2 className="contact-title">Get in Touch</h2>
+          <p className="contact-description">
+            Fill out the form below and we'll get back to you as soon as
+            possible.
+          </p>
         </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Message</label>
-          <input
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-        </div>
-        <button
-          type="submit"
-          disabled={loading}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "15px",
-          }}
+
+        <form
+          className="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
         >
-          {loading && <ClipLoader size={20} color="white" />}
-          Send Message
-        </button>
-      </form>
-    </section>
+          <input type="hidden" name="access_key" value="9cbbd7d0-14de-4dcc-84ee-2b862f330233" />
+          <input
+            type="hidden"
+            name="subject"
+            value="New Contact Form Submission from Web3Forms"
+          />
+          <input type="hidden" name="from_name" value="My Website" />
+
+          <div className="form-group-container">
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                className="form-input"
+                placeholder="Your name"
+                type="text"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                className="form-input"
+                placeholder="Your email"
+                type="email"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="phone" className="form-label">
+                Phone
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                className="form-input"
+                placeholder="+1 (234) 56789"
+                type="text"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message" className="form-label">
+                Message
+              </label>
+              <textarea
+                className="form-textarea"
+                id="message"
+                name="message"
+                placeholder="Your message"
+              ></textarea>
+            </div>
+          </div>
+          <button className="form-submit" type="submit">
+            Send Message
+          </button>
+        </form>
+      </section>
+    </>
   );
 };
-
 export default Contact;

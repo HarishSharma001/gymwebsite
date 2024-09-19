@@ -20,13 +20,13 @@ const BMICalculator = () => {
     setBmi(bmiValue);
 
     if (bmiValue < 18.5) {
-      toast.warning("You are underweight. Bkl kuch kha liya ker");
+      toast.warning("You are underweight");
     } else if (bmiValue >= 18.5 && bmiValue < 24.9) {
       toast.success("Wow! You have healthy person. Keep maintain it.");
     } else if (bmiValue >= 25 && bmiValue < 29.9) {
       toast.warning("You are overweight. You do something");
     } else {
-      toast.error("you are in the obese range. Marga ga bete tu");
+      toast.error("you are in the obese range.");
     }
   };
 

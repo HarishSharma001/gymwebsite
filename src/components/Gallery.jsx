@@ -5,7 +5,6 @@ const Gallery = () => {
     "/absfe.jpg",
     "/deadlift.jpg",
     "/exercise.jpg",
-    "/khtri.jpg",
     "/shirtless.jpg",
     "/girl.jpg",
     "/shirtless2.jpg",
