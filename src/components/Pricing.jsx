@@ -6,13 +6,13 @@ const Pricing = () => {
   const navigate = useNavigate();
   const handlePayment = () => {
     const options = {
-      key: "YOUR_KEY_ID", // Enter the Key ID generated from the Dashboard
-      amount: "50000", // Amount is in currency subunits. 50000 means INR 500
+      key: "YOUR_KEY_ID",
+      amount: "50000",
       currency: "INR",
       name: "Dummy Company",
       description: "Test Transaction",
       image: "https://example.com/logo.png", // Optional
-      order_id: "order_DummyOrderID", // Replace with a valid order ID from your backend or a mock order ID
+      order_id: "order_DummyOrderID",
       handler: function (response) {
         alert(
           `Payment Successful! Payment ID: ${response.razorpay_payment_id}`
