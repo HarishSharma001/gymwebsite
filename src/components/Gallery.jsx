@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Gallery = () => {
-  const gallary = [
+  const gallery = [
     "/absfe.jpg",
     "/deadlift.jpg",
     "/exercise.jpg",
@@ -9,27 +9,29 @@ const Gallery = () => {
     "/girl.jpg",
     "/shirtless2.jpg",
     "/man.jpg",
-    "body.jpg",
+    "/body.jpg",
   ];
+
   return (
     <section className="gallery">
       <h1>BETTER BEATS BEST</h1>
       <div className="images">
-        <div>
-          {gallary.slice(0, 3).map((element, index) => (
-            <img key={index} src={element} alt="gallaryImage" />
-          ))}
-        </div>
-        <div>
-          {gallary.slice(3, 6).map((element, index) => (
-            <img key={index} src={element} alt="gallaryImage" />
-          ))}
-        </div>
-        <div>
-          {gallary.slice(6, 9).map((element, index) => (
-            <img key={index} src={element} alt="gallaryImage" />
-          ))}
-        </div>
+        {gallery.map((element, index) => {
+          const [loading, setLoading] = useState(true);
+
+          return (
+            <div key={index} style={{ position: "relative", width: "100%", height: "auto" }}>
+              {loading && <div className="placeholder">Loading...</div>}
+              <img
+                src={element}
+                alt="galleryImage"
+                loading="lazy"
+                onLoad={() => setLoading(false)}
+                style={{ display: loading ? "none" : "block", width: "100%", height: "auto" }}
+              />
+            </div>
+          );
+        })}
       </div>
     </section>
   );
