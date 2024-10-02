@@ -46,7 +46,8 @@ const Gallery = () => {
             key={item.id}
             src={item.image}
             alt="galleryImage"
-            className="gallery-image img-fluid" // Add Bootstrap class for responsiveness
+            className="gallery-image img-fluid"
+            loading="lazy"
           />
         ))}
       </div>

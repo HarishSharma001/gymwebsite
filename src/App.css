@@ -67,13 +67,14 @@ header p {
   color: #0095ff;
   border: 1px solid #0095ff;
   background: transparent;
-  transition: 0.3s;
+  transition: 0.9s;
+  border-radius:10px;
 }
 .hero .content .buttons button:hover {
-  cursor: pointer;
+  cursor:pointer;
   background: #0095ff;
   color: whitesmoke;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 @media (max-width: 1050px) {
   .hero {
