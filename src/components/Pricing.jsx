@@ -59,9 +59,7 @@ const Pricing = () => {
                   <Check />
                   20 Days Freezing Option
                 </p>
-                <Link to={"/"} onClick={handlePayment}>
                   Join Now
-                </Link>
               </div>
             </div>
           );
