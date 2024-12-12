@@ -4,37 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Pricing = () => {
   const navigate = useNavigate();
-  const handlePayment = () => {
-    const options = {
-      key: "YOUR_KEY_ID",
-      amount: "50000",
-      currency: "INR",
-      name: "Dummy Company",
-      description: "Test Transaction",
-      image: "https://example.com/logo.png", // Optional
-      order_id: "order_DummyOrderID",
-      handler: function (response) {
-        alert(
-          `Payment Successful! Payment ID: ${response.razorpay_payment_id}`
-        );
-      },
-      prefill: {
-        name: "John Doe",
-        email: "john@example.com",
-        contact: "9999999999",
-      },
-      notes: {
-        address: "Sample Address",
-      },
-      theme: {
-        color: "#F37254",
-      },
-    };
-
-    const razorpay = new window.Razorpay(options);
-    razorpay.open();
-  };
-
   const pricing = [
     {
       imgUrl: "/price2.jpg",
